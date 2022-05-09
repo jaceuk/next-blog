@@ -1,0 +1,17 @@
+.inner {
+  composes: inner from 'styles/global.scss';
+  margin-top: calc(var(--size-extraLarge) * -1);
+  padding-bottom: var(--size-extraLarge);
+  background: url('/images/vader.png') no-repeat right bottom;
+  display: flex;
+  gap: var(--size-medium);
+  flex-direction: column;
+}
+
+.narrowContainer {
+  padding: 0 var(--size-extraLarge);
+
+  @media (max-width: 767px) {
+    padding: 0;
+  }
+}

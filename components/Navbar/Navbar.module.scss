@@ -1,0 +1,43 @@
+.container {
+  padding: var(--size-base) 0;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+
+.inner {
+  composes: inner from 'styles/global.scss';
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @media (max-width: 767px) {
+    justify-content: center;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+
+.image {
+  visibility: hidden;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.button {
+  composes: button from 'styles/global.scss';
+  background: var(--color-nearlyBlack20);
+  border-color: var(--color-nearlyBlack20);
+  color: var(--color-white);
+  box-shadow: none;
+
+  &:hover {
+    background: var(--color-nearlyBlack40);
+  }
+}

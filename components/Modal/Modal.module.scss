@@ -1,0 +1,68 @@
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: var(--color-nearlyBlack60);
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: mmfadeIn 0.4s ease-in-out;
+
+  @keyframes mmfadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.image {
+  border-radius: var(--border-radius-medium);
+  max-height: calc(100vh - 2 * var(--size-base));
+}
+
+.imageContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: calc(100% - 2 * var(--size-base));
+  transform: translateY(0.01%);
+  animation: mmslideIn 0.4s ease-in-out;
+
+  @keyframes mmslideIn {
+    from {
+      transform: translateY(5%);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+}
+
+.close {
+  position: absolute;
+  top: calc(var(--size-base) * -1);
+  right: calc(var(--size-base) * -1);
+  border-radius: var(--border-radius-max);
+  padding: var(--size-base);
+}
+
+.icon {
+  height: 24px;
+  min-width: 24px;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}

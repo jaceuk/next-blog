@@ -1,0 +1,14 @@
+.header {
+  position: relative;
+  z-index: -1;
+}
+
+.inner {
+  composes: inner from 'styles/global.scss';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.2rem;
+  padding-top: 19.2rem;
+  padding-bottom: 25.6rem;
+}

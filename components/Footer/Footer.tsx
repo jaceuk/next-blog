@@ -3,7 +3,7 @@ import AnimatedBackground from '@components/AnimatedBackground';
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className={`${styles.footer} good`}>
       <div className="inner">© 2022 Jason Newington</div>
       <AnimatedBackground />
     </footer>

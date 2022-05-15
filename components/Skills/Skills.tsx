@@ -5,11 +5,12 @@ import skills from '@data/skills';
 import developer from '@data/developer';
 import designer from '@data/designer';
 import geek from '@data/geek';
+import Card from '@components/Card';
 
 export default function Skills() {
   return (
     <div className={styles.inner}>
-      <div className="card">
+      <Card>
         <CardTitle text={developer.title} icon={<Code />} textSize="large" />
         <div className="row flex-start">
           <div className="stack">
@@ -25,27 +26,27 @@ export default function Skills() {
             ))}
           </div>
         </div>
-      </div>
+      </Card>
 
       <div className={styles.narrowContainer}>
         <div className="row">
-          <div className="card">
+          <Card>
             <CardTitle text={designer.title} icon={<Brush />} textSize="small" />
             <div className="row">
               {designer.text.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
             </div>
-          </div>
+          </Card>
 
-          <div className="card">
+          <Card>
             <CardTitle text={geek.title} icon={<RocketLaunch />} textSize="small" />
             <div className="row">
               {geek.text.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
             </div>
-          </div>
+          </Card>
         </div>
       </div>
     </div>

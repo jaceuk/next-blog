@@ -52,21 +52,6 @@
   }
 }
 
-.card {
-  display: grid;
-  gap: var(--size-medium);
-  background: var(--color-white);
-  border-radius: var(--border-radius-large);
-  padding: var(--size-medium);
-  box-shadow: 0px 3px 24px var(--color-nearlyBlack20);
-  height: 100%;
-
-  @media (max-width: var(--breakpoint-max-width)) {
-    padding: var(--size-base);
-    border-radius: var(--border-radius-medium);
-  }
-}
-
 .button {
   background: var(--color-white);
   color: var(--color-nearlyBlack);
@@ -81,6 +66,7 @@
   align-items: center;
   gap: var(--size-small);
   text-decoration: none;
+  width: fit-content;
 
   &:hover {
     background: var(--color-black);

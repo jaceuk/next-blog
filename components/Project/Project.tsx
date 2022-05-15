@@ -3,6 +3,7 @@ import { KeyboardArrowDown, KeyboardArrowUp, OpenInNew } from '@mui/icons-materi
 import styles from './Project.module.scss';
 import Lighthouse from '@components/Lighthouse';
 import Modal from '@components/Modal';
+import Card from '@components/Card';
 
 interface IProjectProps {
   data: {
@@ -37,7 +38,7 @@ export function Project({ data }: IProjectProps) {
 
   return (
     <div ref={projectRef}>
-      <div className="card">
+      <Card>
         <div className="stack large">
           <div className="row">
             <div
@@ -121,7 +122,7 @@ export function Project({ data }: IProjectProps) {
             </div>
           )}
         </div>
-      </div>
+      </Card>
 
       {showModal && <Modal handleCloseClick={handleImageClick} image={data.image} />}
     </div>

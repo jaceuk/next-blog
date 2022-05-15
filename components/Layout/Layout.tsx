@@ -5,12 +5,12 @@ import Footer from '@components/Footer';
 
 interface IProps {
   children: React.ReactNode;
-  home?: boolean;
+  title: React.ReactNode;
 }
 
 export const siteTitle = 'Next.js Sample Website';
 
-export default function Layout({ children, home }: IProps) {
+export default function Layout({ children, title }: IProps) {
   return (
     <div>
       <Head>
@@ -18,7 +18,7 @@ export default function Layout({ children, home }: IProps) {
         <meta name="description" content="Learn how to build a personal website using Next.js" />
       </Head>
       <Navbar />
-      <Header />
+      <Header title={title} />
       {children}
       <Footer />
     </div>

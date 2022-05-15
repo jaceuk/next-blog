@@ -33,14 +33,14 @@ body {
 
 h1 {
   font-size: var(--font-size-max);
-  font-weight: var(--font-weight-light);
+  font-weight: var(--font-weight-bold);
 
   @media (max-width: 767px) {
     font-size: calc(var(--font-size-max) * 0.85);
   }
 
-  span {
-    font-weight: var(--font-weight-bold);
+  .light {
+    font-weight: var(--font-weight-light);
   }
 }
 

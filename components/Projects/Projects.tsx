@@ -17,16 +17,11 @@ function Projects() {
             <p key={index}>{paragraph}</p>
           ))}
         </div>
-
         <Project data={dogsToAdopt} />
-
         <Project data={VIPDine} />
-
         <Project data={ESOBuilder} />
-
         <Project data={EVOHomeServices} />
-
-        <Project data={wakefieldSecurity} />
+        <Project data={wakefieldSecurity} />{' '}
       </div>
     </div>
   );

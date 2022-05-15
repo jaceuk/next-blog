@@ -32,6 +32,24 @@
     width: 80px;
     height: 80px;
   }
+
+  &[class~=good] {
+    background-color: var(--color-lighthouseGoodPale);
+
+    .number {
+      color: var(--color-lighthouseGoodDark);
+      background-color: var(--color-lighthouseGoodPale);
+    }
+  }
+
+  &[class~=average] {
+    background-color: var(--color-lighthouseAveragePale);
+
+    .number {
+      color: var(--color-lighthouseAverageDark);
+      background-color: var(--color-lighthouseAveragePale);
+    }
+  }
 }
 
 .type {

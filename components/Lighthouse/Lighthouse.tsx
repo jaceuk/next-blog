@@ -17,20 +17,9 @@ function Lighthouse({ scores }: IProps) {
               backgroundImage: `conic-gradient(var(--color-${
                 parseInt(score) < 90 ? 'lighthouseAverage' : 'lighthouseGood'
               }) ${score}%, transparent 10%)`,
-              backgroundColor: `var(--color-${parseInt(score) < 90 ? 'lighthouseAveragePale' : 'lighthouseGoodPale'})`,
             }}
           >
-            <div
-              className={styles.number}
-              style={{
-                color: `var(--color-${parseInt(score) < 90 ? 'lighthouseAverageDark' : 'lighthouseGoodDark'})`,
-                backgroundColor: `var(--color-${
-                  parseInt(score) < 90 ? 'lighthouseAveragePale' : 'lighthouseGoodPale'
-                })`,
-              }}
-            >
-              {score}
-            </div>
+            <div className={styles.number}>{score}</div>
           </div>
           <div className={styles.type}>{scoreAreas[index]}</div>
         </div>

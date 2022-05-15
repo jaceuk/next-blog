@@ -1,7 +1,7 @@
-import Layout from '../../components/Layout';
+import Layout from '@components/Layout';
 import { getAllPostSlugs, getPostData } from '../../lib/posts';
 import Head from 'next/head';
-import Date from '../../components/Date';
+import Date from '@components/Date';
 
 interface IProps {
   postData: {

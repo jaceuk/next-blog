@@ -1,0 +1,46 @@
+.header {
+  position: relative;
+  z-index: -1;
+}
+
+.inner {
+  composes: inner from 'styles/global.scss';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.2rem;
+  padding-top: 21.5rem;
+  padding-bottom: 28.8rem;
+}
+
+.image {
+  display: block;
+  height: 265px;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.title {
+  color: var(--color-white);
+  text-align: left;
+
+  @media (max-width: 767px) {
+    text-align: center;
+  }
+
+  .bold {
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+.subtitle {
+  font-weight: var(--font-weight-regular);
+  font-family: 'Raleway', sans-serif;
+  font-size: var(--font-size-extraLarge);
+
+  @media (max-width: 767px) {
+    font-size: calc(var(--font-size-extraLarge) * 0.85);
+  }
+}

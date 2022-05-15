@@ -1,5 +1,7 @@
 import * as React from 'react';
-import Layout from '../components/Layout';
+import { ToastContainer, toast, Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Layout from '@components/Layout/Layout';
 import Head from 'next/head';
 
 export default function Contact() {
@@ -25,6 +27,7 @@ export default function Contact() {
     e.preventDefault();
 
     if (inputs.name && inputs.email && inputs.message) {
+      const toastId = toast.loading('Please wait...');
       setForm({ state: 'loading', message: 'Loading.' });
       try {
         const res = await fetch(`api/contact`, {
@@ -34,6 +37,8 @@ export default function Contact() {
           },
           body: JSON.stringify(inputs),
         });
+
+        toast.dismiss(toastId);
 
         const { error } = await res.json();
 
@@ -47,24 +52,27 @@ export default function Contact() {
 
         setForm({
           state: 'success',
-          message: 'Your message was sent successfully.',
+          message: 'Your message was sent successfully',
         });
         setInputs({
           name: '',
           email: '',
           message: '',
         });
+
+        toast.success('Your message was sent successfully');
       } catch (error) {
         setForm({
           state: 'error',
           message: 'Something went wrong',
         });
+        toast.error('Something went wrong');
       }
     }
   };
 
   return (
-    <Layout home>
+    <Layout>
       <Head>
         <title>NextJS Blog</title>
       </Head>
@@ -81,6 +89,18 @@ export default function Contact() {
           form.state === 'success' && <div>Sent successfully</div>
         )}
       </form>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        transition={Slide}
+      />
     </Layout>
   );
 }

@@ -1,0 +1,123 @@
+.inner {
+  max-width: var(--size-containerMaxWidth);
+  margin: 0 auto;
+  padding: 0 var(--size-base);
+}
+
+.stack {
+  display: grid;
+  gap: var(--size-base);
+
+  &.small {
+    gap: var(--size-small);
+  }
+
+  &.medium {
+    gap: var(--size-medium);
+  }
+
+  &.large {
+    gap: var(--size-large);
+  }
+
+  &.justify-center {
+    justify-content: center;
+  }
+}
+
+.row {
+  display: flex;
+  align-items: stretch;
+  gap: var(--size-medium);
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &.center {
+    align-items: center;
+  }
+
+  &.flex-start {
+    align-items: flex-start;
+  }
+
+  > * {
+    flex-basis: 0;
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}
+
+.card {
+  display: grid;
+  gap: var(--size-medium);
+  background: var(--color-white);
+  border-radius: var(--border-radius-large);
+  padding: var(--size-medium);
+  box-shadow: 0px 3px 24px var(--color-nearlyBlack20);
+  height: 100%;
+
+  @media (max-width: var(--breakpoint-max-width)) {
+    padding: var(--size-base);
+    border-radius: var(--border-radius-medium);
+  }
+}
+
+.button {
+  background: var(--color-white);
+  color: var(--color-nearlyBlack);
+  border-radius: var(--border-radius-small);
+  padding: var(--size-base) var(--size-medium);
+  font-weight: var(--font-weight-bold);
+  border: 1px solid var(--color-nearlyBlack);
+  cursor: pointer;
+  box-shadow: 0px 4px 4px var(--color-nearlyBlack20);
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--size-small);
+  text-decoration: none;
+
+  &:hover {
+    background: var(--color-black);
+    color: var(--color-white);
+  }
+}
+
+.accessibleText {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.tags {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: var(--color-paleGrey);
+  border-radius: var(--border-radius-small);
+  padding: var(--size-base) var(--size-medium);
+  display: inline-block;
+}
+
+.box {
+  display: flex;
+  justify-content: flex-start;
+
+  &.center {
+    justify-content: center;
+  }
+}

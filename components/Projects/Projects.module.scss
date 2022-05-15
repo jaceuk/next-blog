@@ -1,0 +1,11 @@
+.container {
+  padding: var(--size-large) 0;
+  background-color: var(--color-paleGrey);
+}
+
+.inner {
+  composes: inner from 'styles/global.scss';
+  display: flex;
+  gap: var(--size-large);
+  flex-direction: column;
+}

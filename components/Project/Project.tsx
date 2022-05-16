@@ -60,7 +60,7 @@ export function Project({ data }: IProjectProps) {
                     <h2>{data.title}</h2>
                   </div>
                   <p>{data.intro}</p>
-                  <div className="box center">
+                  <div className="box justify-center">
                     <button className="button" onClick={handleMoreClick}>
                       {infoVisible ? (
                         <>
@@ -87,7 +87,7 @@ export function Project({ data }: IProjectProps) {
           {infoVisible && (
             <div className={styles.moreInfo}>
               <div className="stack large">
-                <div className="card">
+                <Card>
                   <h3>Project overview</h3>
                   <div className="row flex-start">
                     <div className="stack">
@@ -103,7 +103,7 @@ export function Project({ data }: IProjectProps) {
                       ))}
                     </div>
                   </div>
-                </div>
+                </Card>
 
                 {data.lighthouseScores && <Lighthouse scores={data.lighthouseScores} />}
 

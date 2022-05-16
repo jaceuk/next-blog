@@ -1,6 +1,6 @@
 import styles from './Skills.module.scss';
 import { Code, Brush, RocketLaunch } from '@mui/icons-material';
-import CardTitle from '@components/CardTitle';
+import CardTitle from '@components/CardTitleSC';
 import skills from '@data/skills';
 import developer from '@data/developer';
 import designer from '@data/designer';

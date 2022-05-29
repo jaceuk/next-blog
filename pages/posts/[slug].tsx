@@ -1,7 +1,8 @@
 import Layout from '@components/Layout';
 import { getAllPostSlugs, getPostData } from '../../lib/posts';
 import Head from 'next/head';
-import Date from '@components/Date';
+import Card from '@components/Card';
+import styles from './[slug].module.scss';
 
 interface IProps {
   postData: {
@@ -31,17 +32,18 @@ export async function getStaticPaths() {
 
 export default function Post({ postData }: IProps) {
   return (
-    <Layout title="Post">
+    <Layout>
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <article>
-        <h1>{postData.title}</h1>
-        <div>
-          <Date dateString={postData.date} />
+      <div className={styles.inner}>
+        <div className={styles.narrowContainer}>
+          <Card>
+            <h1>{postData.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+          </Card>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      </article>
+      </div>
     </Layout>
   );
 }

@@ -5,7 +5,7 @@ import Footer from '@components/Footer';
 
 interface IProps {
   children: React.ReactNode;
-  title: React.ReactNode;
+  title?: React.ReactNode;
 }
 
 export const siteTitle = 'Next.js Sample Website';

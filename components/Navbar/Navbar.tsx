@@ -11,6 +11,9 @@ export default function Header() {
           <Link href={'/'}>
             <a className={styles.button}>Home</a>
           </Link>
+          <Link href={'/blog/'}>
+            <a className={styles.button}>Blog</a>
+          </Link>
           <Link href={'/contact/'}>
             <a className={styles.button}>Contact</a>
           </Link>

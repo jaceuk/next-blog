@@ -12,7 +12,7 @@ interface IProps {
 
 interface IPostData {
   slug: string;
-  date: string;
+  excerpt: string;
   title: string;
 }
 

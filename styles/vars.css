@@ -14,6 +14,7 @@
   --color-nearlyBlack20: rgba(51, 51, 51, 0.2);
   --color-nearlyBlack40: rgba(51, 51, 51, 0.4);
   --color-nearlyBlack60: rgba(51, 51, 51, 0.6);
+  --color-nearlyBlack80: rgba(51, 51, 51, 0.8);
   --color-white: #ffffff;
   --color-white80: rgba(255, 255, 255, 0.8);
   --color-paleGrey: #f5f5f5;
@@ -29,6 +30,9 @@
   --color-lighthouseAverage: #FFAA33;
   --color-lighthouseAverageDark: #C33300;
   --color-lighthouseAveragePale: #FFF7EB;
+  --color-lighthousePoor: #f33;
+  --color-lighthousePoorDark: #c00;
+  --color-lighthousePoorPale: #ffebeb;
   --color-green: #18A46F;
   --color-paleGreen: #F1FDF8;
   --color-orange: #F55700;

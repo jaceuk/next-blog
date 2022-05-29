@@ -3,6 +3,9 @@ import styles from './ContactForm.module.scss';
 import EmailIcon from '@mui/icons-material/Email';
 import CardTitle from '@components/CardTitle';
 import Card from '@components/Card';
+import Alert from '@components/Alert';
+import Overlay from '@components/Overlay';
+import Loader from '@components/Loader';
 
 export default function ContactForm() {
   const [inputs, setInputs] = React.useState({
@@ -74,6 +77,20 @@ export default function ContactForm() {
             <Card>
               <CardTitle text="Contact form" icon={<EmailIcon />} textSize="large" />
 
+              {form.state === 'loading' ? (
+                <Overlay>
+                  <Loader>Sending....</Loader>
+                </Overlay>
+              ) : form.state === 'error' ? (
+                <Alert type="error">
+                  There was a problem sending your message, please try again.
+                  <br />
+                  If the problem perists please email info@jace.info.
+                </Alert>
+              ) : (
+                form.state === 'success' && <Alert type="success">Sent successfully</Alert>
+              )}
+
               <form onSubmit={(event) => onSubmitForm(event)} className="stack medium">
                 <div className="stack small">
                   <label htmlFor="name" className={styles.label}>
@@ -85,7 +102,6 @@ export default function ContactForm() {
                     value={inputs.name}
                     className={styles.input}
                     onChange={handleChange}
-                    placeholder="Name"
                     required
                   />
                 </div>
@@ -100,7 +116,6 @@ export default function ContactForm() {
                     className={styles.input}
                     value={inputs.email}
                     onChange={handleChange}
-                    placeholder="Email"
                     required
                   />
                 </div>
@@ -114,21 +129,12 @@ export default function ContactForm() {
                     className={styles.input}
                     value={inputs.message}
                     onChange={handleChange}
-                    placeholder="Message"
                     rows={5}
                     required
                   />
                 </div>
 
                 <input className={`button ${styles.submit}`} type="submit" value="Send your message" />
-
-                {form.state === 'loading' ? (
-                  <div>Sending....</div>
-                ) : form.state === 'error' ? (
-                  <div>{form.message}</div>
-                ) : (
-                  form.state === 'success' && <div>Sent successfully</div>
-                )}
               </form>
             </Card>
           </div>

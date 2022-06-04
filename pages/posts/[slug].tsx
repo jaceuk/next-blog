@@ -40,7 +40,7 @@ export default function Post({ postData }: IProps) {
         <div className={styles.narrowContainer}>
           <Card>
             <h1>{postData.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+            <div className="stack" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
           </Card>
         </div>
       </div>

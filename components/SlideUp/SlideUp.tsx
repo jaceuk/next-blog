@@ -14,7 +14,7 @@ const cardVariants: Variants = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.8,
+      duration: 0.4,
       ease: 'easeOut',
     },
   },
